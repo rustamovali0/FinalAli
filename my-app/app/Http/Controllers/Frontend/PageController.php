@@ -3,32 +3,35 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function about(){
-        return view('Front.pages.about');
-
+    public function about()
+    {
+        $about = About::where('id', 1)->first();
+        return view('Front.pages.about',compact('about'));
     }
-    public function services(){
+    public function services()
+    {
         return view('Front.pages.services');
-
     }
-    public function products(){
+    public function products()
+    {
         return view('Front.pages.products');
-
     }
-    public function blog(){
+    public function blog()
+    {
         return view('Front.pages.blog');
-
     }
-    public function contact(){
+    public function contact()
+    {
         return view('Front.pages.contact');
-       }
+    }
 
-       public function form(){
+    public function form()
+    {
         return view('Front.pages.form');
-       }
+    }
 }

@@ -24,7 +24,7 @@
     </div>
     </div>
     </div>
-    </div>
+    </div> 
     </div>
     <div class="header-mid header-sticky">
     <div class="container">
