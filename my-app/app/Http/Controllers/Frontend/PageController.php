@@ -27,7 +27,7 @@ class PageController extends Controller
     }
     public function contact()
     {
-        return view('Front.pages.contact');
+        return view('Front.pages.form');
     }
 
     public function form()

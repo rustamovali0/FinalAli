@@ -3,7 +3,7 @@
 @section('content')
 <div class="order-form">
     <h2>Sipariş Formu</h2>
-    <form>
+    <form action="{{ route('contact.form') }}" method="post" >
         <div class="form-group">
             <label for="adSoyad">Ad Soyad</label>
             <input type="text" class="form-control" id="adSoyad" name="adSoyad" required>

@@ -46,57 +46,31 @@
     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
     <div class="single-footer-caption mb-50">
     <div class="footer-tittle">
-    <h4>Shop Men</h4>
     <ul>
-    <li><a href="#">Clothing Fashion</a></li>
-    <li><a href="#">Winter</a></li>
-    <li><a href="#">Summer</a></li>
-    <li><a href="#">Formal</a></li>
-    <li><a href="#">Casual</a></li>
+    <li><a href="#">{{$setting['adres']}}</a></li>
+    <li><a href="#">{{$setting['phone']}}</a></li>
+    <li><a href="#">{{$setting['email']}}</a></li>
     </ul>
     </div>
     </div>
     </div>
     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
     <div class="single-footer-caption mb-50">
-    <div class="footer-tittle">
-    <h4>Shop Women</h4>
-    <ul>
-    <li><a href="#">Clothing Fashion</a></li>
-    <li><a href="#">Winter</a></li>
-    <li><a href="#">Summer</a></li>
-    <li><a href="#">Formal</a></li>
-    <li><a href="#">Casual</a></li>
-    </ul>
+
     </div>
     </div>
+    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+
     </div>
     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
     <div class="single-footer-caption mb-50">
     <div class="footer-tittle">
-    <h4>Baby Collection</h4>
-    <ul>
-    <li><a href="#">Clothing Fashion</a></li>
-    <li><a href="#">Winter</a></li>
-    <li><a href="#">Summer</a></li>
-    <li><a href="#">Formal</a></li>
-    <li><a href="#">Casual</a></li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-    <div class="single-footer-caption mb-50">
-    <div class="footer-tittle">
-    <h4>Quick Links</h4>
-    <ul>
-    <li><a href="#">Track Your Order</a></li>
-    <li><a href="#">Support</a></li>
-    <li><a href="#">FAQ</a></li>
-    <li><a href="#">Carrier</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact Us</a></li>
-    </ul>
+        <div> {{$setting['map']}}
+        </div>
+
+
+{{-- map gelmelidi --}}
+
     </div>
     </div>
     </div>
@@ -110,7 +84,7 @@
     <div class="row">
     <div class="col-xl-12 ">
     <div class="footer-copy-right text-center">
-    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" rel="nofollow noopener">Colorlib</a></p>
+    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" rel="nofollow noopener">Rustamov Ali</a></p>
     </div>
     </div>
     </div>
