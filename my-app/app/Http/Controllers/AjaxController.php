@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class AjaxController extends Controller
 {
     public function contactForm(Request $request){
-    $data = $request->all();
-    $lastsaved = Contact::create($data);
-    return $lastsaved;  
+     return $request->all();
     }
 }
+
+// $data = $request->all();
+// $lastsaved = Contact::create($data);
+// return $lastsaved;
