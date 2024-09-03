@@ -15,6 +15,7 @@ class ProductSeeder extends Seeder
     {
         Product::create([
             'name'=>'Kartic',
+            'image'=>'https://picsum.photos/200/300',
             'category_id'=>1,
             'short_text'=>'printer kartici',
             'price'=>100,
@@ -26,6 +27,7 @@ class ProductSeeder extends Seeder
         ]);
         Product::create([
             'name'=>'Kartic 2',
+            'image'=>'https://picsum.photos/200/300',
             'category_id'=>2,
             'short_text'=>'printer kartici 2',
             'price'=>120,
