@@ -14,6 +14,7 @@ Route::group(['middleware'=>'setting'], function(){
     Route::get('/services', [PageController::class,'service'])->name('services');
 
     Route::get('/products', [PageController::class,'products'])->name('products');
+    Route::get('/products/pro-detail', [PageController::class,'proDetails'])->name('proDetails');
     Route::get('/products/kartic', [PageController::class,'products'])->name('products');
     Route::get('/products/printer', [PageController::class,'products'])->name('products');
     Route::get('/products/toner', [PageController::class,'products'])->name('products');
@@ -24,6 +25,5 @@ Route::group(['middleware'=>'setting'], function(){
     Route::post('/contact/save', [AjaxController::class,'contactForm'])->name('contact.form');
 
     Route::get('/form', [PageController::class,'form'])->name('form');
-
 });
 

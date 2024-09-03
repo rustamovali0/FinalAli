@@ -17,6 +17,10 @@ class PageController extends Controller
     {
         return view('Front.pages.services');
     }
+    public function proDetails()
+    {
+        return view('Front.pages.proDetails');
+    }
     public function products()
     {
         return view('Front.pages.products');

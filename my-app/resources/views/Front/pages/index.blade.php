@@ -823,8 +823,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blogs mb-30">
                         <div class="blog-img">
-                            <a href="pro-details.html"><img src="{{ asset('Front/assets/img/gallery/blog1.jpg') }}"
-                                    alt=""></a>
+                            <a href="pro-details.html">
+                                <img src="{{ asset('Front/assets/img/gallery/blog1.jpg') }}"alt="">
+                            </a>
                         </div>
                         <div class="blogs-cap">
                             <span>Fashion Tips</span>
