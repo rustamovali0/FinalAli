@@ -2,8 +2,9 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Setting;
 use Closure;
+use App\Models\Setting;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -17,7 +18,9 @@ class SettingMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $settings = Setting::pluck('data','name')->toArray();
-        view()->share(['setting' => $settings]);
+        $categories = Category::where('status','1')->get();
+
+        view()->share(['setting' => $settings,'categories'=>$categories]);
         return $next($request);
     }
 }

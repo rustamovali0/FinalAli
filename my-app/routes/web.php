@@ -14,11 +14,8 @@ Route::group(['middleware'=>'setting'], function(){
     Route::get('/services', [PageController::class,'service'])->name('services');
 
     Route::get('/products', [PageController::class,'products'])->name('products');
-    Route::get('/products/pro-detail', [PageController::class,'proDetails'])->name('proDetails');
-    Route::get('/products/kartic', [PageController::class,'products'])->name('products');
-    Route::get('/products/printer', [PageController::class,'products'])->name('products');
-    Route::get('/products/toner', [PageController::class,'products'])->name('products');
-
+    Route::get('/products/{slug}', [PageController::class,'proDetails'])->name('proDetails');
+   
     Route::get('/blog', [PageController::class,'blog'])->name('blog');
 
     Route::get('/contact', [PageController::class,'contact'])->name('contact');

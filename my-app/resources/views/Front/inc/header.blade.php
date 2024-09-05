@@ -24,7 +24,7 @@
     </div>
     </div>
     </div>
-    </div> 
+    </div>
     </div>
     <div class="header-mid header-sticky">
     <div class="container">
@@ -37,10 +37,10 @@
     <div class="main-menu d-none d-lg-block">
     <nav>
                         <ul id="navigation">
-                            <li><a href="{{ route('index') }}">Home</a></li>
-                            <li><a href="{{ route('about') }}">About</a></li>
-                            <li class="new"><a href="{{ route('services') }}">Services</a></li>
-                            <li><a href="{{ route('products') }}">Products <i class="fas fa-angle-down"></i></a>
+                            <li><a href="{{ route('index') }}">Ana səhifə</a></li>
+                            <li><a href="{{ route('about') }}">Haqqımızda</a></li>
+                            <li class="new"><a href="{{ route('services') }}">Xidmətlər</a></li>
+                            <li><a href="{{ route('products') }}">Məhsullar <i class="fas fa-angle-down"></i></a>
                                 <ul class="submenu">
                                     @if (!empty($categories) && $categories->count() > 0)
                                         @foreach ($categories as $category)
@@ -67,7 +67,7 @@
                                 <li><a href="{{ route('blog') }}">Blog Details</a></li>
                             </ul>
                             </li>
-                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                            <li><a href="{{ route('contact') }}">Əlaqə</a></li>
                         </ul>
                     </nav>
                 </div>

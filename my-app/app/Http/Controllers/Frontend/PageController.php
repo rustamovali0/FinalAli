@@ -18,13 +18,14 @@ class PageController extends Controller
     {
         return view('Front.pages.services');
     }
-    public function proDetails()
+    public function proDetails($slug)
     {
-        return view('Front.pages.proDetails');
+        $product = Product::whereSlug($slug)->first();
+        return view('Front.pages.proDetails',compact('product'));
     }
     public function products()
     {
-        Product::where('status','1')->get();
+       $products = Product::where('status','1')->get();
         return view('Front.pages.products',compact('products'));
     }
     public function blog()
