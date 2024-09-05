@@ -2,10 +2,11 @@
 
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\Frontend\PageController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\PageHomeController;
-use GuzzleHttp\Middleware;
+use App\Http\Controllers\Backend\DashboardController;
+use Illuminate\Support\Facades\Route;
 
+// Frontend Routes
 Route::group(['middleware'=>'setting'], function(){
     Route::get('/', [PageHomeController::class,'index'])->name('index');
 
@@ -15,7 +16,7 @@ Route::group(['middleware'=>'setting'], function(){
 
     Route::get('/products', [PageController::class,'products'])->name('products');
     Route::get('/products/{slug}', [PageController::class,'proDetails'])->name('proDetails');
-   
+
     Route::get('/blog', [PageController::class,'blog'])->name('blog');
 
     Route::get('/contact', [PageController::class,'contact'])->name('contact');
@@ -24,3 +25,7 @@ Route::group(['middleware'=>'setting'], function(){
     Route::get('/form', [PageController::class,'form'])->name('form');
 });
 
+// Backend (Panel) Routes
+Route::group(['middleware'=>'panelsetting', 'prefix'=>'panel'], function(){
+    Route::get('/', [DashboardController::class,'index'])->name('panel');
+});
