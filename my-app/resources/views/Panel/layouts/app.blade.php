@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>Admin Panel</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -24,12 +24,13 @@
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-
+    @include('Panel.inc.header')
     <!-- partial -->
-  
+
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+  @include('Panel.inc.footter')
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
