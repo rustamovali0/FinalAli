@@ -202,7 +202,10 @@
       @include('Panel.inc.sidebar')
       <!-- partial -->
       <div class="main-panel">
-        @yield('content')
+        <div class="content-wrapper">
+            @yield('content')
+
+        </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         @include('Panel.inc.footer')
@@ -233,7 +236,9 @@
   <!-- Custom js for this page-->
   <script src="{{ asset('AdminPanel/js/dashboard.js') }}"></script>
   <script src="{{ asset('AdminPanel/js/Chart.roundedBarCharts.js') }}"></script>
+  <script src="{{ asset('AdminPanel/js/file-upload.js') }}"></script>
   <!-- End custom js for this page-->
+
 </body>
 
 </html>
