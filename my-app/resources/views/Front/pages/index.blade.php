@@ -3,7 +3,7 @@
 @section('content')
     <section class="slider-area ">
         <div class="slider-active">
-         <div class="single-slider slider-bg2 slider-height d-flex align-items-center" style="background-image:url({{asset($slider->image)}})">
+         <div class="single-slider slider-bg2 slider-height d-flex align-items-center" style="background-image:url({{asset('AdminPanel/img/slider/' . $slider->image)}})">
                 <div class="container">
                     <div class="row justify-content-end">
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-8 col-sm-10">

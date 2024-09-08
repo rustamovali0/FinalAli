@@ -24,7 +24,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('Panel.pages.slider.create');
+        return view('Panel.pages.slider.edit');
 
     }
 
@@ -46,7 +46,7 @@ class SliderController extends Controller
             'status'=>$request->status,
             'image'=>$fayladi,
         ]);
-        return back()->withSuccess('Ugurla yaradildi');
+        return back()->withSuccess('Ugurla yaradildi!');
 
 
     }
@@ -77,7 +77,22 @@ class SliderController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+          if($request->hasFile('image')){
+            $sekil = $request->file('image');
+            $fayladi = time()."-".Str::slug($request->name).'.'.$sekil->getClientOriginalExtension();
+            $sekil->move(public_path('AdminPanel/img/slider'), $fayladi);
+
+        }
+        Slider::where('id',$id)->update([
+            'name'=>$request->name,
+            'link'=>$request->link,
+            'content'=>$request->content,
+            'status'=>$request->status,
+            'image'=>$fayladi,
+        ]);
+        return back()->withSuccess('Ugurla yenilendi!');
+
     }
 
     /**
@@ -85,6 +100,14 @@ class SliderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $slider=Slider::where('id',$id)->firstOrFail();
+        if(file_exists($slider->image)){
+            if(!empty($slider->image)){
+            unlink($slider->image);
+        }
+        }
+
+        $slider->delete();
+        return back()->withSuccess('Ugurla silindi!');
     }
 }

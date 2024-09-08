@@ -8,6 +8,13 @@
           <p class="card-description">
           <a href="{{route('slider.create')}}" class="btn btn-primary">Yarat</a>
         </p>
+
+            @if (session()->get('success'))
+            <div class="alert alert-success">
+                {{session()->get('success')}}
+            </div>
+            @endif
+
           <div class="table-responsive">
             <table class="table">
               <thead>
@@ -25,8 +32,8 @@
                 @foreach ($sliders as $slider)
                 <tr>
                     <td class="py-1">
-                        <img src="{{asset($slider->image)}}" alt="image"/>
-                      </td>
+                        <img src="{{ asset('AdminPanel/img/slider/' . $slider->image) }}" alt="image"/>
+                    </td>
                       <td>{{$slider->name}}</td>
                       <td>{{$slider->content ?? ''}}</td>
                       <td>{{$slider->link}}</td>
@@ -34,6 +41,7 @@
                       <td class="d-flex">
                         <a href="{{route('slider.edit',$slider->id)}}" class="btn btn-primary mr-2">Redakte et</a></td>
 <form action="{{route('slider.destroy',$slider->id)}}" method="POST">
+    @csrf
     @method("DELETE")
     <td><button type="submit" href="{{route('slider.edit',$slider->id)}}" class="btn btn-danger">Sil</button></td>
 </form>
