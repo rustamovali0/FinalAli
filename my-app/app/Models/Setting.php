@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-      protected $fillable = [
-      'name',
-       'data'
-      ];
+    protected $fillable = [
+        'name',
+        'data',
+        'set_type'
+    ];
 }

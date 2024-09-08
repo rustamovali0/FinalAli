@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\PageHomeController;
 
@@ -35,6 +36,11 @@ Route::group(['middleware'=>'panelsetting', 'prefix'=>'panel'], function(){
     Route::post('/slider/store', [SliderController::class,'store'])->name('slider.store');
     Route::put('/slider/{id}/update', [SliderController::class,'update'])->name('slider.update');
     Route::delete('/slider/{id}', [SliderController::class,'destroy'])->name('slider.destroy');
-    // Route::post('/slider-durum/update', [SliderController::class,'status'])->name('slider.status');
+
+
+    Route::get('/setting', [SettingController::class,'index'])->name('setting.index');
+    Route::post('/setting/store', [SettingController::class,'store'])->name('setting.store');
+    Route::get('/setting/{id}/edit', [SettingController::class,'edit'])->name('setting.edit');
+    Route::put('/setting/{id}/update', [SettingController::class,'edit'])->name('setting.update');
 
 });
