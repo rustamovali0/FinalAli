@@ -20,8 +20,8 @@
                             <thead>
                                 <tr>
                                     <th>Sekil</th>
-                                    <th>Basliq</th>
-                                    <th>Content </th>
+                                    <th>Key</th>
+                                    <th>Value</th>
                                     <th>Edit</th>
                                 </tr>
                             </thead>
@@ -43,6 +43,11 @@
                                                 <a href="{{ route('setting.edit', $setting->id) }}"
                                                     class="btn btn-primary mr-2">Redakte et</a>
                                             </td>
+                                            <form action="{{route('setting.destroy',$setting->id)}}" method="POST">
+                                                @csrf
+                                                @method("DELETE")
+                                                <td><button type="submit" href="{{route('setting.edit',$setting->id)}}" class="btn btn-danger">Sil</button></td>
+                                            </form>
 
                                         </tr>
                                     @endforeach
