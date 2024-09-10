@@ -14,7 +14,7 @@
             <input type="text" name="slug" id="slug" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="image">Sekil</label>
+            <label for="image">Şəkil</label>
             <input type="file" name="image" id="image" class="form-control" required>
         </div>
         {{-- <div class="form-group">
@@ -23,15 +23,15 @@
             </select>
         </div> --}}
         <div class="form-group">
-            <label for="price">Qiymet</label>
+            <label for="price">Qiymət</label>
             <input type="number" name="price" id="price" class="form-control" step="0.01" required>
         </div>
         <div class="form-group">
-            <label for="color">Reng</label>
+            <label for="color">Rəng</label>
             <input type="text" name="color" id="color" class="form-control">
         </div>
         <div class="form-group">
-            <label for="qty">Sayi</label>
+            <label for="qty">Sayı</label>
             <input type="number" name="qty" id="qty" class="form-control" required>
         </div>
         <div class="form-group">
@@ -46,10 +46,10 @@
             <input type="text" name="suitability" id="suitability" class="form-control">
         </div> --}}
         <div class="form-group">
-            <label for="content">İçerik</label>
+            <label for="content">Açıqlama</label>
             <textarea name="content" id="content" class="form-control"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Ekle</button>
+        <button type="submit" class="btn btn-primary">Əlavə et</button>
     </form>
 </div>
 @endsection

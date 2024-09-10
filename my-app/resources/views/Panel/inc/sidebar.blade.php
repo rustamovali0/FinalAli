@@ -1,11 +1,11 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-       
+
 
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="icon-layout menu-icon"></i>
-                <span class="menu-title">Slider</span>
+                <span class="menu-title">Slayd</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
@@ -19,7 +19,7 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#product-menu" aria-expanded="false" aria-controls="product-menu">
                 <i class="icon-box menu-icon"></i>
-                <span class="menu-title">Ürünler</span>
+                <span class="menu-title">Məhsullar</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="product-menu">
@@ -33,7 +33,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('setting.index')}}">
                 <i class="icon-settings menu-icon"></i>
-                <span class="menu-title">Sayt ayarlari</span>
+                <span class="menu-title">Sayt ayarları</span>
             </a>
         </li>
 
@@ -41,7 +41,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('contact.index')}}">
                 <i class="icon-envelope menu-icon"></i>
-                <span class="menu-title">Bizimle elaqe</span>
+                <span class="menu-title">Biziml</span>
             </a>
         </li>
     </ul>

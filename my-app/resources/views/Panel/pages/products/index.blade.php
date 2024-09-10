@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <h1>Ürünler</h1>
-    <a href="{{ route('products.create') }}" class="btn btn-primary">Ürün Ekle</a>
+    <h1>Məhsullar</h1>
+    <a href="{{ route('products.create') }}" class="btn btn-primary">Məhsul əlavə et</a>
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -15,9 +15,9 @@
                 <th>ID</th>
                 <th>Ad</th>
                 <th>Slug</th>
-                <th>Resim</th>
-                <th>Fiyat</th>
-                <th>Aksiyonlar</th>
+                <th>Şəkil</th>
+                <th>Qiymət</th>
+                <th>Fəaliyyətlər</th>
             </tr>
         </thead>
         <tbody>
@@ -26,10 +26,10 @@
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->slug }}</td>
-                    <td><img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="100"></td>   
+                    <td><img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="100"></td>
                     <td>{{ $product->price }}</td>
                     <td>
-                        <a href="{{ route('products.edit', $product) }}" class="btn btn-warning">Düzenle</a>
+                        <a href="{{ route('products.edit', $product) }}" class="btn btn-warning">Redaktə et</a>
                         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
