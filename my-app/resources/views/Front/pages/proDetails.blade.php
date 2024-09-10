@@ -36,7 +36,7 @@
                             <div class="col-xl-12">
                                 <div class="single-services d-flex align-items-center mb-0">
                                     <div class="features-img">
-                                        <img src="{{ asset($product->image) }}"alt=""></a>
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="" style="width: 300px; height:300px;">
 
                                     </div>
                                     <div class="features-caption">
@@ -55,7 +55,7 @@
                                             </div>
                                             <p>(120 Review)</p>
                                         </div>
-                                        <a href="./form.html" class="white-btn mr-10">Order Now</a>
+                                        <a href="{{ route('contact') }}" class="white-btn mr-10">Order Now</a>
 
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Panel;
+namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('panel.products.index', compact('products'));
+        return view('panel.pages.products.index', compact('products'));
     }
 
     public function create()
@@ -25,7 +25,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:products',
             'image' => 'required|image',
-            'category_id' => 'required|exists:categories,id',
+            // 'category_id' => 'required|exists:categories,id',
             'short_text' => 'nullable|string',
             'price' => 'required|numeric',
             'color' => 'nullable|string',
@@ -35,17 +35,16 @@ class ProductController extends Controller
             'content' => 'nullable|string',
         ]);
 
-        // Handle file upload
         $imagePath = $request->file('image')->store('products', 'public');
 
         Product::create(array_merge($validated, ['image' => $imagePath]));
 
-        return redirect()->route('panel.products.index')->with('success', 'Ürün başarıyla eklendi!');
+        return redirect()->route('products.index')->with('success', 'Ürün başarıyla eklendi!');
     }
 
     public function edit(Product $product)
     {
-        return view('panel.pages.products.edit', compact('product'));
+return view('Panel.pages.products.edit', compact('product'));
     }
 
     public function update(Request $request, Product $product)
@@ -54,7 +53,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:products,slug,' . $product->id,
             'image' => 'nullable|image',
-            'category_id' => 'required|exists:categories,id',
+            // 'category_id' => 'required|exists:categories,id',
             'short_text' => 'nullable|string',
             'price' => 'required|numeric',
             'color' => 'nullable|string',
@@ -65,19 +64,18 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            // Handle file upload
             $imagePath = $request->file('image')->store('products', 'public');
             $validated['image'] = $imagePath;
         }
 
         $product->update($validated);
 
-        return redirect()->route('panel.products.index')->with('success', 'Ürün başarıyla güncellendi!');
+        return redirect()->route('products.index')->with('success', 'Ürün başarıyla güncellendi!');
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('panel.products.index')->with('success', 'Ürün başarıyla silindi!');
+        return redirect()->route('products.index')->with('success', 'Ürün başarıyla silindi!');
     }
 }

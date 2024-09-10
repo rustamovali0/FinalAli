@@ -42,7 +42,7 @@ Route::group(['middleware'=>'panelsetting', 'prefix'=>'panel'], function(){
     Route::delete('/setting/{id}', [SettingController::class, 'destroy'])->name('setting.destroy');
 
     Route::get('/contacts', [ContactController::class, 'index'])->name('contact.index');
-    Route::prefix('panel')->name('panel.')->group(function () {
-        Route::resource('products', ProductController::class);
-    });
+
+    // Products Resource Route
+    Route::resource('products', ProductController::class);
 });

@@ -1,9 +1,9 @@
-@extends('Panel.layout')
+@extends('Panel.layouts.app')
 
 @section('content')
 <div class="container">
     <h1>Yeni Ürün Ekle</h1>
-    <form action="{{ route('panel.products.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="name">Ad</label>
@@ -14,38 +14,37 @@
             <input type="text" name="slug" id="slug" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="image">Resim</label>
+            <label for="image">Sekil</label>
             <input type="file" name="image" id="image" class="form-control" required>
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="category_id">Kategori</label>
             <select name="category_id" id="category_id" class="form-control" required>
-                <!-- Burada kategorileri listeleyin -->
             </select>
-        </div>
+        </div> --}}
         <div class="form-group">
-            <label for="price">Fiyat</label>
+            <label for="price">Qiymet</label>
             <input type="number" name="price" id="price" class="form-control" step="0.01" required>
         </div>
         <div class="form-group">
-            <label for="color">Renk</label>
+            <label for="color">Reng</label>
             <input type="text" name="color" id="color" class="form-control">
         </div>
         <div class="form-group">
-            <label for="qty">Miktar</label>
+            <label for="qty">Sayi</label>
             <input type="number" name="qty" id="qty" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="status">Durum</label>
+            <label for="status">Status</label>
             <select name="status" id="status" class="form-control" required>
-                <option value="0">Pasif</option>
-                <option value="1">Aktif</option>
+                <option value="0">Deaktiv</option>
+                <option value="1">Aktiv</option>
             </select>
         </div>
-        <div class="form-group">
-            <label for="suitability">Uygunluk</label>
+        {{-- <div class="form-group">
+            <label for="suitability">Uygunluq</label>
             <input type="text" name="suitability" id="suitability" class="form-control">
-        </div>
+        </div> --}}
         <div class="form-group">
             <label for="content">İçerik</label>
             <textarea name="content" id="content" class="form-control"></textarea>

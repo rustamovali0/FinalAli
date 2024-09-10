@@ -1,9 +1,9 @@
-@extends('Panel.layout')
+@extends('Panel.layouts.app')
 
 @section('content')
 <div class="container">
     <h1>Ürünler</h1>
-    <a href="{{ route('panel.products.create') }}" class="btn btn-primary">Ürün Ekle</a>
+    <a href="{{ route('products.create') }}" class="btn btn-primary">Ürün Ekle</a>
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -26,11 +26,11 @@
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->slug }}</td>
-                    <td><img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="100"></td>
+                    <td><img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="100"></td>   
                     <td>{{ $product->price }}</td>
                     <td>
-                        <a href="{{ route('panel.products.edit', $product) }}" class="btn btn-warning">Düzenle</a>
-                        <form action="{{ route('panel.products.destroy', $product) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('products.edit', $product) }}" class="btn btn-warning">Düzenle</a>
+                        <form action="{{ route('products.destroy', $product) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Sil</button>
