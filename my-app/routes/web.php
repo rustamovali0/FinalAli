@@ -1,16 +1,21 @@
 <?php
 
+use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\PageHomeController;
+
+
 // Frontend Routes
-Route::group(['middleware'=>'setting'], function(){
+Route::group(['middleware' => 'setting'], function() {
     Route::get('/', [PageHomeController::class, 'index'])->name('index');
     Route::get('/about', [PageController::class, 'about'])->name('about');
     Route::get('/services', [PageController::class, 'service'])->name('services');
@@ -25,8 +30,9 @@ Route::group(['middleware'=>'setting'], function(){
 });
 
 // Backend (Panel) Routes
-Route::group(['middleware'=>'panelsetting', 'prefix'=>'panel'], function(){
+Route::group(['middleware' => 'panelsetting', 'prefix' => 'panel'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('panel');
+
     Route::get('/slider', [SliderController::class, 'index'])->name('slider.index');
     Route::get('/slider/add', [SliderController::class, 'create'])->name('slider.create');
     Route::get('/slider/{id}/edit', [SliderController::class, 'edit'])->name('slider.edit');
@@ -45,4 +51,15 @@ Route::group(['middleware'=>'panelsetting', 'prefix'=>'panel'], function(){
 
     // Products Resource Route
     Route::resource('products', ProductController::class);
+
+    // Service Resource Route
+    Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+    Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
+    Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
+    Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
+    Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
+    Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
+
+    Route::resource('blogs', BlogController::class);
+
 });

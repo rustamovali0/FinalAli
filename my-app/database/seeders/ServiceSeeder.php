@@ -7,7 +7,7 @@ class ServiceSeeder extends Seeder
     public function run()
     {
         Service::create([
-            'name' => 'Web Development',
+            'name' => 'Web aaaDevelopment',
             'description' => 'We offer custom web development services.',
             'status' => 1
         ]);

@@ -195,109 +195,51 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="cl-xl-7 col-lg-8 col-md-10">
-
                     <div class="section-tittle text-center mb-40">
                         <h2>Latest News</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blogs mb-30">
-                        <div class="blog-img">
-                            <a href="pro-details.html">
-                                <img src="{{ asset('Front/assets/img/gallery/blog1.jpg') }}"alt="">
-                            </a>
-                        </div>
-                        <div class="blogs-cap">
-                            <span>Fashion Tips</span>
-                            <h5><a href="pro-details.html">What Curling Irons Are The Best Ones</a></h5>
-                            <p>Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus..</p>
-                            <a href="pro-details.html" class="red-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blogs mb-30">
-                        <div class="blog-img">
-                            <a href="pro-details.html"><img src="{{ asset('Front/assets/img/gallery/blog2.jpg') }}"
-                                    alt=""></a>
-                        </div>
-                        <div class="blogs-cap">
-                            <span>Fashion Tips</span>
-                            <h5><a href="pro-details.html">Vogue's Ultimate Guide To Autumn/
-                                    Winter 2019 Shoes</a></h5>
-                            <p>Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus..</p>
-                            <a href="pro-details.html" class="red-btn">Read More</a>
+                @foreach ($blogs as $blog)
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-blogs mb-30">
+                            <div class="blog-img">
+                                <a href="{{ route('blogs.show', $blog->id) }}">
+                                    <img src="{{ asset('storage/' . $blog->image) }}" alt="">
+                                </a>
+                            </div>
+                            <div class="blogs-cap">
+                                <span>{{ $blog->category ?? 'Uncategorized' }}</span>
+                                <h5><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h5>
+                                <p>{{ Str::limit($blog->description, 100) }}</p>
+                                <a href="{{ route('blogs.show', $blog->id) }}" class="red-btn">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blogs mb-30">
-                        <div class="blog-img">
-                            <a href="pro-details.html"><img src="{{ asset('Front/assets/img/gallery/blog3.jpg') }}"
-                                    alt=""></a>
-                        </div>
-                        <div class="blogs-cap">
-                            <span>Fashion Tips</span>
-                            <h5><a href="pro-details.html">What Curling Irons Are The Best Ones</a></h5>
-                            <p>Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus..</p>
-                            <a href="pro-details.html" class="red-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
 
+
     <div class="categories-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-cat mb-50 wow fadeInUp text-center" data-wow-duration="1s" data-wow-delay=".2s">
-                        <div class="cat-icon">
-                            <img src="{{ asset('Front/assets/img/icon/services1.svg') }}" alt="">
-                        </div>
-                        <div class="cat-cap">
-                            <h5>Fast & Free Delivery</h5>
-                            <p>Free delivery on all orders</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-cat mb-50 wow fadeInUp text-center" data-wow-duration="1s" data-wow-delay=".2s">
-                        <div class="cat-icon">
-                            <img src="{{ asset('Front/assets/img/icon/services2.svg') }}" alt="">
-                        </div>
-                        <div class="cat-cap">
-                            <h5>Secure Payment</h5>
-                            <p>Free delivery on all orders</p>
+                @foreach($services as $service)
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat mb-50 wow fadeInUp text-center" data-wow-duration="1s" data-wow-delay=".{{ $loop->index + 2 }}s">
+                            <div class="cat-icon">
+                                <img src="{{ asset('Front/assets/img/icon/services' . $service->id . '.svg') }}" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5>{{ $service->name }}</h5>
+                                <p>{{ $service->description }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-cat mb-50 wow fadeInUp text-center" data-wow-duration="1s" data-wow-delay=".4s">
-                        <div class="cat-icon">
-                            <img src="{{ asset('Front/assets/img/icon/services3.svg') }}" alt="">
-                        </div>
-                        <div class="cat-cap">
-                            <h5>Money Back Guarantee</h5>
-                            <p>Free delivery on all orders</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-cat mb-50 wow fadeInUp text-center" data-wow-duration="1s" data-wow-delay=".5s">
-                        <div class="cat-icon">
-                            <img src="{{ asset('Front/assets/img/icon/services4.svg') }}" alt="">
-                        </div>
-                        <div class="cat-cap">
-                            <h5>Online Support</h5>
-                            <p>Free delivery on all orders</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

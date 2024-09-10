@@ -19,7 +19,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('AdminPanel/css/vertical-layout-light/style.css') }}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ asset('AdminPanel/images/favicon.png') }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('Front/assets/img/icon/favicon.png')}}">
 </head>
 
 <body>
