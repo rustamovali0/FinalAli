@@ -1,14 +1,38 @@
 (function ($)
     { "use strict"
-    
+
 /* 0. Proloder */
   $(window).on('load', function () {
-    $('#preloader-active').delay(450).fadeOut('slow');
-    $('body').delay(450).css({
+    $('#preloader-active').delay(200).fadeOut('slow');
+    $('body').delay(200).css({
       'overflow': 'visible'
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const prevButton = document.querySelector('.prev-slide');
+    const nextButton = document.querySelector('.next-slide');
+    const slides = document.querySelectorAll('.single-slider');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    prevButton.addEventListener('click', function() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+        showSlide(currentIndex);
+    });
+
+    nextButton.addEventListener('click', function() {
+        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+        showSlide(currentIndex);
+    });
+
+    showSlide(currentIndex); // Show the first slide initially
+});
 
 /* 1. sticky And Scroll UP */
     $(window).on('scroll', function () {
@@ -29,7 +53,7 @@
       }, 800);
       return false;
     });
-  
+
 /* 2. slick Nav */
 // mobile_menu
     var menu = $('ul#navigation');
@@ -40,7 +64,7 @@
         openedSymbol:'-'
       });
     };
-    
+
 
 //3. Search Toggle
     $("#search_input_box").hide();
@@ -73,7 +97,7 @@
       autoplaySpeed: 4000,
       dots: false,
       fade: true,
-      arrows: true, 
+      arrows: true,
       prevArrow: '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
       nextArrow: '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>',
       responsive: [{
@@ -297,7 +321,7 @@
 /* 10. WOW active */
     new WOW().init();
 
-// 11. ---- Mailchimp js --------//  
+// 11. ---- Mailchimp js --------//
     function mailChimp() {
       $('#mc_embed_signup').find('form').ajaxChimp();
     }

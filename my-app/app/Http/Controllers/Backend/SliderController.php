@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\SliderRequest;
 
 class SliderController extends Controller
@@ -15,7 +15,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-       $sliders = Slider::all();
+        $sliders = Slider::where('status', 1)->get();
         return view('Panel.pages.slider.index',compact('sliders'));
     }
 

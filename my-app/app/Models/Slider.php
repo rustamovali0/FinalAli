@@ -14,5 +14,5 @@ class Slider extends Model
     'content',
     'link',
     'status',
-    ];  
+    ];
 }

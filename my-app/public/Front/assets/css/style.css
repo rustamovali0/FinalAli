@@ -1413,6 +1413,30 @@ hr {
     background-position: center center;
     background-size: cover;
 }
+.slider-active {
+    position: relative;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.prev-slide {
+    left: 10px;
+}
+
+.next-slide {
+    right: 10px;
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider-height {
         min-height: 700px;

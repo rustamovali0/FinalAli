@@ -13,7 +13,7 @@ class AddStatusToBlogsTable extends Migration
     public function up()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->boolean('status')->default(1)->after('description'); // 'description' sütunu veya uygun bir sütun adı
+            $table->boolean('status')->default(1)->after('description'); 
         });
     }
 

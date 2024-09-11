@@ -47,9 +47,9 @@
     <div class="single-footer-caption mb-50">
     <div class="footer-tittle">
     <ul>
-    <li><a href="#">{{$setting['adres']}}</a></li>
-    <li><a href="#">{{$setting['phone']}}</a></li>
-    <li><a href="#">{{$setting['email']}}</a></li>
+        <li><a href="#">{{ $setting['adres'] ?? 'Adres bilgisi bulunamadı' }}</a></li>
+        <li><a href="#">{{ $setting['phone'] ?? 'Telefon bilgisi bulunamadı' }}</a></li>
+        <li><a href="#">{{ $setting['email'] ?? 'Email bilgisi bulunamadı' }}</a></li>
     </ul>
     </div>
     </div>
@@ -65,7 +65,11 @@
     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
     <div class="single-footer-caption mb-50">
     <div class="footer-tittle">
-        <div> {{$setting['map']}}
+        <div> @if(isset($setting['map']))
+            <div> {{ $setting['map'] }} </div>
+        @else
+            <div> Map not available </div>
+        @endif
         </div>
 
 
