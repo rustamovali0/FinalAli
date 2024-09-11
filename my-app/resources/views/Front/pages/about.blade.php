@@ -12,7 +12,7 @@
 
         </div>
         <div class="about-image">
-            <img src="{{$about->image}}" alt="Hakkımızda">
+            <img src="{{ asset('storage/' . $about->image) }}" alt="Image">
         </div>
     </div>
 </div>

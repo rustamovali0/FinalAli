@@ -69,5 +69,18 @@
                 <span class="menu-title">Bizimle elaqe</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#about-menu" aria-expanded="false" aria-controls="about-menu">
+                <i class="icon-info menu-icon"></i>
+                <span class="menu-title">Hakkımızda</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="about-menu">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('about.index') }}">Hakkımızda Siyahısı</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('about.create') }}">Hakkımızda Əlavə et</a></li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </nav>

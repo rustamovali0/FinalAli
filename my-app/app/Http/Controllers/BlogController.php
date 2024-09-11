@@ -60,11 +60,9 @@ class BlogController extends Controller
         ];
 
         if ($request->hasFile('image')) {
-            // Eski resmi sil
             if ($blog->image) {
                 Storage::delete('public/' . $blog->image);
             }
-            // Yeni resmi kaydet
             $imagePath = $request->file('image')->store('public/blogs');
             $data['image'] = str_replace('public/', '', $imagePath);
         }

@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SettingController;
@@ -22,6 +23,7 @@ Route::group(['middleware' => 'setting'], function() {
     Route::get('/products', [PageController::class, 'products'])->name('products');
     Route::get('/products/{slug}', [PageController::class, 'proDetails'])->name('proDetails');
     Route::get('/blog', [PageController::class, 'blog'])->name('blog');
+    Route::get('/services', [PageController::class, 'services'])->name('services');
     Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
     Route::post('/contact/save', [ContactController::class, 'store'])->name('contact.form');
@@ -49,17 +51,18 @@ Route::group(['middleware' => 'panelsetting', 'prefix' => 'panel'], function() {
 
     Route::get('/contacts', [ContactController::class, 'index'])->name('contact.index');
 
-    // Products Resource Route
     Route::resource('products', ProductController::class);
 
-    // Service Resource Route
     Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
     Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
     Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
     Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
     Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
     Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
-
     Route::resource('blogs', BlogController::class);
+
+
+    Route::resource('about', AboutController::class);
+
 
 });

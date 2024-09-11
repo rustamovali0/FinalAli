@@ -210,10 +210,8 @@
                                 </a>
                             </div>
                             <div class="blogs-cap">
-                                <span>{{ $blog->category ?? 'Uncategorized' }}</span>
                                 <h5><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h5>
                                 <p>{{ Str::limit($blog->description, 100) }}</p>
-                                <a href="{{ route('blogs.show', $blog->id) }}" class="red-btn">Read More</a>
                             </div>
                         </div>
                     </div>
