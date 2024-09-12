@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row justify-content-end">
                     <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-8 col-sm-10">
-                        <div class="hero-caption text-center">
+                       <div class="hero-caption text-center">
                             <span>{{ $slider->name }}</span>
                             <h1 data-animation="bounceIn" data-delay="0.2s">{{$slider->content}}</h1>
 
