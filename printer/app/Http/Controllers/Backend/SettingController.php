@@ -31,14 +31,14 @@ class SettingController extends Controller
         $setting->data = $request->input('data');
         $setting->save();
 
-        return redirect()->route('setting.index')->with('success', 'Ayar başarıyla eklendi');
+        return redirect()->route('setting.index')->with('success', 'Uğurla əlavə olundu');
     }
 
     public function edit($id)
 {
     $setting = Setting::find($id);
     if (!$setting) {
-        return redirect()->route('setting.index')->with('error', 'Ayar bulunamadı');
+        return redirect()->route('setting.index')->with('error', 'Tapılmadı');
     }
     return view('Panel.pages.setting.edit', compact('setting'));
 }
@@ -55,7 +55,7 @@ class SettingController extends Controller
         $setting = Setting::find($id);
 
         if (!$setting) {
-            return redirect()->route('setting.index')->with('error', 'Ayar bulunamadı');
+            return redirect()->route('setting.index')->with('error', 'Tapılmadı');
         }
 
         $setting->update([
@@ -63,7 +63,7 @@ class SettingController extends Controller
             'data' => $request->input('data'),
         ]);
 
-        return redirect()->route('setting.index')->with('success', 'Ayar başarıyla güncellendi');
+        return redirect()->route('setting.index')->with('success', 'Uğurla redaktə olundu');
     }
 
 public function destroy($id)
@@ -71,12 +71,12 @@ public function destroy($id)
     $setting = Setting::find($id);
 
     if (!$setting) {
-        return redirect()->route('setting.index')->with('error', 'Ayar bulunamadı');
+        return redirect()->route('setting.index')->with('error', 'Tapılmadı');
     }
 
     $setting->delete();
 
-    return redirect()->route('setting.index')->with('success', 'Ayar başarıyla silindi');
+    return redirect()->route('setting.index')->with('success', 'Uğurla silindi  ');
 }
 
 }

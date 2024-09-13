@@ -39,7 +39,7 @@ class ProductController extends Controller
 
         Product::create(array_merge($validated, ['image' => $imagePath]));
 
-        return redirect()->route('products.index')->with('success', 'Ürün başarıyla eklendi!');
+        return redirect()->route('products.index')->with('success', 'Uğurla əlavə olundu.');
     }
 
     public function edit(Product $product)
@@ -70,12 +70,12 @@ return view('Panel.pages.products.edit', compact('product'));
 
         $product->update($validated);
 
-        return redirect()->route('products.index')->with('success', 'Ürün başarıyla güncellendi!');
+        return redirect()->route('products.index')->with('success', 'Uğurla redaktə olundu');
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('products.index')->with('success', 'Ürün başarıyla silindi!');
+        return redirect()->route('products.index')->with('success', 'Uğurla silindi');
     }
 }

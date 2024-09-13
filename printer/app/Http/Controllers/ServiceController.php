@@ -10,7 +10,6 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        // Servisleri listele
         $services = Service::all();
         return view('Panel.pages.services.index', compact('services'));
     }
@@ -34,7 +33,7 @@ class ServiceController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->route('services.index')->with('success', 'Service created successfully.');
+        return redirect()->route('services.index')->with('success', 'Uğurla yaradıldı.');
     }
 
     public function edit($id)
@@ -58,7 +57,7 @@ class ServiceController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->route('services.index')->with('success', 'Service updated successfully.');
+        return redirect()->route('services.index')->with('success', 'Uğurla redaktə olundu');
     }
 
     public function destroy($id)
@@ -66,6 +65,6 @@ class ServiceController extends Controller
         $service = Service::findOrFail($id);
         $service->delete();
 
-        return redirect()->route('services.index')->with('success', 'Service deleted successfully.');
+        return redirect()->route('services.index')->with('success', 'Uğurla silindi.');
     }
 }

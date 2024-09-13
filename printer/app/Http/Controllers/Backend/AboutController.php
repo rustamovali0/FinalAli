@@ -37,7 +37,7 @@ class AboutController extends Controller
         }
 
         $about->save();
-        return redirect()->route('about.index')->with('success', 'About created successfully');
+        return redirect()->route('about.index')->with('success', 'Uğurla yaradıldı');
     }
 
     public function edit(About $about)
@@ -62,12 +62,12 @@ class AboutController extends Controller
         }
 
         $about->save();
-        return redirect()->route('about.index')->with('success', 'About updated successfully');
+        return redirect()->route('about.index')->with('success', 'Uğurla redaktə olundu');
     }
 
     public function destroy(About $about)
     {
         $about->delete();
-        return redirect()->route('about.index')->with('success', 'About deleted successfully');
+        return redirect()->route('about.index')->with('success', 'Uğurla silindi');
     }
 }
