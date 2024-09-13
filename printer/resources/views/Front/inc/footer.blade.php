@@ -7,15 +7,15 @@
     <div class="row justify-content-between subscribe-padding">
     <div class="col-xxl-3 col-xl-3 col-lg-4">
     <div class="subscribe-caption">
-    <h3>Subscribe Newsletter</h3>
-    <p>Subscribe newsletter to get 5% on all products.</p>
+    <h3>Abunə ol</h3>
+    <p>Abunə ol və 5% bütün məhsullara endirim qazan.</p>
     </div>
     </div>
     <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
     <div class="subscribe-caption">
     <form action="#">
     <input type="text" placeholder="Enter your email">
-    <button class="subscribe-btn">Subscribe</button>
+    <button class="subscribe-btn">Abunə ol</button>
     </form>
     </div>
     </div>
