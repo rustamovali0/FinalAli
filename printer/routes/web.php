@@ -49,7 +49,8 @@ Route::group(['middleware' => 'panelsetting', 'prefix' => 'panel'], function() {
     Route::put('/setting/{id}/update', [SettingController::class, 'update'])->name('setting.update');
     Route::delete('/setting/{id}', [SettingController::class, 'destroy'])->name('setting.destroy');
 
-    Route::get('/contacts', [ContactController::class, 'index'])->name('contact.index');
+    Route::get('/contacts', action: [ContactController::class, 'index'])->name('contact.index');
+    Route::delete('/contacts/{id}', action: [ContactController::class, 'destroy'])->name('contact.destroy');
 
     Route::resource('products', ProductController::class);
 

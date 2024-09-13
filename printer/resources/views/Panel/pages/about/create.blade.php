@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Haqqında hissəsinə əlavə et</h1>
+    <h3>Haqqında hissəsinə əlavə et</h3>
     <form action="{{ route('about.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">

@@ -31,9 +31,9 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         if ($contact) {
             $contact->delete();
-            return redirect()->route('contact.index')->with('success', 'Ugurla silindi');
+            return redirect()->route('contact.index')->with('success', 'Uğurla silindi');
         } else {
-            return redirect()->route('contact.index')->with('error', 'Tapilmadi');
+            return redirect()->route('contact.index')->with('error', 'Tapılmadı');
         }
     }
 }

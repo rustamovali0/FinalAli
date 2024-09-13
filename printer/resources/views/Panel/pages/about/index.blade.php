@@ -8,8 +8,9 @@
         <thead>
             <tr>
                 <th>Başlıq</th>
-                <th>Açıqlama</th>
                 <th>Şəkil</th>
+                <th>Açıqlama</th>
+
                 <th>Fəaliyyətlər</th>
             </tr>
         </thead>
@@ -17,12 +18,13 @@
             @foreach($abouts as $about)
             <tr>
                 <td>{{ $about->name }}</td>
-                <td>{{ Str::limit($about->content, 50) }}</td>
                 <td>
                     @if($about->image)
                         <img src="{{ asset('storage/' . $about->image) }}" alt="Image" width="100">
                     @endif
                 </td>
+                <td>{{ Str::limit($about->content, 50) }}</td>
+
                 <td>
                     <a href="{{ route('about.edit', $about->id) }}" class="btn btn-primary">Redaktə</a>
                     <form action="{{ route('about.destroy', $about->id) }}" method="POST" style="display:inline;">

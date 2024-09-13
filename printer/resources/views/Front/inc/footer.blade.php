@@ -15,7 +15,7 @@
     <div class="subscribe-caption">
     <form action="#">
     <input type="text" placeholder="Enter your email">
-    <button class="subscribe-btn">Abunə ol</button>
+    <button class="subscribe-btn" style="background-color:blue;">Abunə ol</button>
     </form>
     </div>
     </div>
@@ -47,9 +47,9 @@
     <div class="single-footer-caption mb-50">
     <div class="footer-tittle">
     <ul>
-        <li><a href="#">{{ $setting['adres'] ?? 'Adres bilgisi bulunamadı' }}</a></li>
-        <li><a href="#">{{ $setting['phone'] ?? 'Telefon bilgisi bulunamadı' }}</a></li>
-        <li><a href="#">{{ $setting['email'] ?? 'Email bilgisi bulunamadı' }}</a></li>
+        <li><a href="#">{{ $setting['adres'] ?? 'Yoxdur' }}</a></li>
+        <li><a href="#">{{ $setting['phone'] ?? 'Yoxdur' }}</a></li>
+        <li><a href="#">{{ $setting['email'] ?? 'Yoxdur' }}</a></li>
     </ul>
     </div>
     </div>
@@ -68,7 +68,7 @@
         <div> @if(isset($setting['map']))
             <div> {{ $setting['map'] }} </div>
         @else
-            <div> Map not available </div>
+            <div> Xəritə tapilmadı </div>
         @endif
         </div>
 

@@ -46,7 +46,7 @@
               </div>
               <div class="form-group">
                 <label for="content">Açıqlama</label>
-                <textarea class="form-control" id="content" name="content" placeholder="Slider content" rows="3">{!!$slider->content  ?? '' !!}</textarea>
+                <textarea class="form-control" id="content" name="content" placeholder="Slider content" rows="3">{{$slider->content  ?? '' }}</textarea>
               </div>
               <div class="form-group">
                 <label for="link">Link URL</label>

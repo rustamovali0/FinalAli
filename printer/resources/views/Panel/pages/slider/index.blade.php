@@ -36,7 +36,7 @@
                         <img src="{{ asset('AdminPanel/img/slider/' . $slider->image) }}" alt="image"/>
                     </td>
                       <td>{{$slider->name}}</td>
-                      <td>{{$slider->content ?? ''}}</td>
+                      <td>{{$slider->content}}</td>
                       <td>{{$slider->link}}</td>
                       <td><label class="badge badge-{{$slider->status == '1' ? 'success' : 'danger'}}">{{$slider->status == '1' ? 'Aktiv' : 'Deaktiv'}}</label></td>
                       <td class="d-flex">

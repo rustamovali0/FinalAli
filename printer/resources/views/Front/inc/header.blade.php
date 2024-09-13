@@ -33,7 +33,7 @@
         <div class="logo">
 
             <img src="{{ asset('Front/assets/img/logo/logo.png') }}"
-            alt="" width="120px" height="50px" style="background-color: black">
+            alt="" width="200px" height="100px">
             </div>
 
     <div class="main-menu d-none d-lg-block">

@@ -30,15 +30,15 @@
 
     <div class="form-group">
         <label for="name">Key</label>
-        <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $setting->name ?? '') }}" placeholder="Setting Başlığı">
+        <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $setting->name ?? '') }}" >
     </div>
     <div class="form-group">
         <label for="data">Value</label>
-        <input type="text" class="form-control" id="data" name="data" value="{{ old('data', $setting->data ?? '') }}" placeholder="Setting İçeriği">
+        <input type="text" class="form-control" id="data" name="data" value="{{ old('data', $setting->data ?? '') }}" >
     </div>
 
-    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-    <button type="reset" class="btn btn-light">Cancel</button>
+    <button type="submit" class="btn btn-primary mr-2">Saxla</button>
+    <button type="reset" class="btn btn-light">Legv et</button>
 </form>
 
 

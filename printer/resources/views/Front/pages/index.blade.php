@@ -1,23 +1,25 @@
 @extends('Front.layout.layout')
 
 @section('content')
-<section class="slider-area ">
+<section class="slider-area">
     <div class="slider-active">
-     <div class="single-slider slider-bg2 slider-height d-flex align-items-center" style="background-image:url({{asset('AdminPanel/img/slider/' . $slider->image)}})">
-            <div class="container">
-                <div class="row justify-content-end">
-                    <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-8 col-sm-10">
-                       <div class="hero-caption text-center">
-                            <span>{{ $slider->name }}</span>
-                            <h1 data-animation="bounceIn" data-delay="0.2s">{{$slider->content}}</h1>
-
-                            <a href="{{ route('form') }}" class="btn_1 hero-btn" data-animation="fadeInUp" data-delay="0.7s">Bizimlə əlaqə</a>
+        @foreach ($sliders as $slider)
+            <div class="single-slider slider-bg2 slider-height d-flex align-items-center" style="background-image:url({{ asset('AdminPanel/img/slider/' . $slider->image) }})">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-8 col-sm-10">
+                            <div class="hero-caption text-center">
+                                <span>{{ $slider->name }}</span>
+                                <h1 data-animation="bounceIn" data-delay="0.2s">{{ old('content', $slider->content ?? '') }}</h1>
+                                <a href="{{ route('form') }}" class="btn"  style="margin-bottom: 2rem; background-color:blue;" data-animation="fadeInUp" data-delay="0.7s">Əlaqə</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
+
 </section>
 
 
@@ -196,7 +198,8 @@
             <div class="row justify-content-center">
                 <div class="cl-xl-7 col-lg-8 col-md-10">
                     <div class="section-tittle text-center mb-40">
-                        <h2>Latest News</h2>
+                        <h2>Son Bloqlarımız
+                        </h2>
                     </div>
                 </div>
             </div>
