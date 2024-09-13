@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Məhsullar</h1>
+    <h1>Məhsulların siyahısı</h1>
     <a href="{{ route('products.create') }}" class="btn btn-primary">Məhsul əlavə et</a>
     @if(session('success'))
         <div class="alert alert-success">
@@ -14,7 +14,7 @@
             <tr>
                 <th>ID</th>
                 <th>Ad</th>
-                <th>Slug</th>
+                <th>Key</th>
                 <th>Şəkil</th>
                 <th>Qiymət</th>
                 <th>Fəaliyyətlər</th>
@@ -29,7 +29,7 @@
                     <td><img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="100"></td>
                     <td>{{ $product->price }}</td>
                     <td>
-                        <a href="{{ route('products.edit', $product) }}" class="btn btn-warning">Redaktə et</a>
+                        <a href="{{ route('products.edit', $product) }}" class="btn btn-warning">Redaktə</a>
                         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

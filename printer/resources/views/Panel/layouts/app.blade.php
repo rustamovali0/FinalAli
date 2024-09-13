@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="{{ asset('AdminPanel/css/vertical-layout-light/style.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('Front/assets/img/icon/favicon.png')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Yeni Ürün Ekle</h1>
+    <h1>Yeni məhsul əlavə et</h1>
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
@@ -10,7 +10,7 @@
             <input type="text" name="name" id="name" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="slug">Slug</label>
+            <label for="slug">Key</label>
             <input type="text" name="slug" id="slug" class="form-control" required>
         </div>
         <div class="form-group">

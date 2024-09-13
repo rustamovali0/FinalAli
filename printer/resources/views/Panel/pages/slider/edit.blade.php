@@ -4,7 +4,7 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Slider elave et</h4>
+            <h4 class="card-title">Slayd</h4>
             @if ($errors)
             @foreach ($errors->all() as $error)
             <div class="alert alert-danger">
@@ -41,16 +41,16 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Slider basliq</label>
+                <label for="name">Başlıq</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{$slider->name  ?? ''}}" placeholder="Slider basliq">
               </div>
               <div class="form-group">
-                <label for="content">Content</label>
+                <label for="content">Açıqlama</label>
                 <textarea class="form-control" id="content" name="content" placeholder="Slider content" rows="3">{!!$slider->content  ?? '' !!}</textarea>
               </div>
               <div class="form-group">
-                <label for="link">Slider link</label>
-                <input type="text" class="form-control" id="link" name="link" value="{{$slider->link  ?? ''}}" placeholder="Slider linki">
+                <label for="link">Link URL</label>
+                <input type="text" class="form-control" id="link" name="link" value="{{$slider->link  ?? ''}}" placeholder="Slayd linki">
               </div>
 
 

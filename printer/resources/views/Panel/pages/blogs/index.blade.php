@@ -4,9 +4,9 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Blog Listesi</h4>
+                <h4 class="card-title">Bloq siyahısı</h4>
                 <p class="card-description">
-                    <a href="{{ route('blogs.create') }}" class="btn btn-primary">Blog Ekle</a>
+                    <a href="{{ route('blogs.create') }}" class="btn btn-primary">Əlavə et</a>
                 </p>
 
                 @if (session()->get('success'))
@@ -19,13 +19,13 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Resim</th>
-                                <th>Başlık</th>
-                                <th>Slug</th>
-                                <th>Açıklama</th>
-                                <th>Kategori</th>
+                                <th>Şəkil</th>
+                                <th>Başlıq</th>
+                                <th>Key</th>
+                                <th>Açıqlama</th>
+                                <th>Kateqoriya</th>
                                 <th>Status</th>
-                                <th>Düzenle</th>
+                                <th>Redaktə</th>
                                 <th>Sil</th>
                             </tr>
                         </thead>
@@ -42,7 +42,7 @@
                                 <td>{{ $blog->category ?? 'Yok' }}</td>
                                 <td><label class="badge badge-{{ $blog->status == '1' ? 'success' : 'danger' }}">{{ $blog->status == '1' ? 'Aktif' : 'Pasif' }}</label></td>
                                 <td>
-                                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-primary">Düzenle</a>
+                                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-primary">Redaktə</a>
                                 </td>
                                 <td>
                                     <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">

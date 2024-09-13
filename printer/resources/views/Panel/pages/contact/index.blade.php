@@ -5,7 +5,7 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Gelen Mesajlar</h4>
+                    <h4 class="card-title">Gələn sifarişlər</h4>
 
                     @if (session()->get('success'))
                         <div class="alert alert-success">
@@ -17,13 +17,13 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Ad Soyad</th>
+                                    <th>Ad-Soyad</th>
                                     <th>Email</th>
                                     <th>Telefon</th>
-                                    <th>Konu</th>
+                                    <th>Sifariş</th>
                                     <th>Mesaj</th>
-                                    <th>Tarih</th>
-                                    <th>İşlem</th>
+                                    <th>Yazılma tarixi</th>
+                                    <th>Sil</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,12 +37,10 @@
                                             <td>{{ $contact->message }}</td>
                                             <td>{{ $contact->created_at }}</td>
                                             <td>
-                                                <!-- Silme butonu -->
                                                 <form action="{{ route('contact.destroy', $contact->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Bu mesajı silmek istediğinizden emin misiniz?');">
+                                                    <button type="submit" class="btn btn-danger btn-sm">
                                                         Sil
                                                     </button>
                                                 </form>
@@ -51,7 +49,7 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="7">Hiç mesaj bulunamadı.</td>
+                                        <td colspan="7">Boşdur.</td>
                                     </tr>
                                 @endif
                             </tbody>

@@ -4,7 +4,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Slider Table</h4>
+          <h4 class="card-title">Slayd siyahısı</h4>
           <p class="card-description">
           <a href="{{route('slider.create')}}" class="btn btn-primary">Yarat</a>
         </p>
@@ -19,12 +19,13 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>Sekil</th>
-                  <th>Basliq</th>
-                  <th>Content </th>
-                  <th>Link</th>
+                  <th>Şəkil</th>
+                  <th>Başlıq</th>
+                  <th>Açıqlama</th>
+                  <th>Link URL</th>
                   <th>Status</th>
-                  <th>Edit</th>
+                  <th>Redaktə</th>
+                  <th>Sil</th>
                 </tr>
               </thead>
               <tbody>

@@ -13,7 +13,7 @@
     </div>
 
     <div class="form-group">
-        <label for="slug">Slug</label>
+        <label for="slug">Key</label>
         <input type="text" name="slug" class="form-control" value="{{ old('slug', $product->slug) }}" required>
     </div>
 
