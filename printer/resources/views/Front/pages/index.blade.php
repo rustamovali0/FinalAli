@@ -65,7 +65,8 @@
                                 <div class="properties-card">
                                     <div class="properties-img">
                                         <a href="{{route('proDetails', $product->slug)}}">
-                                            <img src="{{ asset($product->image) }}"alt=""></a>
+                                            <img src="{{ asset('storage/' . $product->image) }}" alt="">
+
                                             <div class="socal_icon">
                                             <a href="#"><i class="ti-shopping-cart"></i></a>
                                             <a href="#"><i class="ti-heart"></i></a>
@@ -168,7 +169,7 @@
                     <div class="properties-card">
                         <div class="properties-img">
                             <a href="{{route('proDetails', $product->slug)}}">
-                                <img src="{{ asset($product->image) }}"alt=""></a>
+                                <img src="{{ asset('storage/' . $product->image) }}" alt="">
                                 <div class="socal_icon">
                                 <a href="#"><i class="ti-shopping-cart"></i></a>
                                 <a href="#"><i class="ti-heart"></i></a>
